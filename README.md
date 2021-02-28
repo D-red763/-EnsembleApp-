@@ -46,6 +46,8 @@ https://github.com/D-red763/-EnsembleApp-/blob/main/Application/BO/BO-Soap%E9%85
 https://github.com/D-red763/-EnsembleApp-/blob/main/Application/BO/BO-TCP%E9%85%8D%E7%BD%AE.png
 
 
+English Description
+
 Integration scheme for heterogeneous messages in heterogeneous systems
 
 Summary:
