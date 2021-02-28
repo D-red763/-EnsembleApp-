@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Export generator="Cache" version="25" zv="Cache for Windows (x86-64) 2017.2.2 (Build 865U)" ts="2021-02-28 23:44:42">
+<Class name="Tongji.ADT.Rule.ScanADTRoutingRule">
+<Description>
+</Description>
+<Super>Ens.Rule.Definition</Super>
+<TimeChanged>65778,40786.746565</TimeChanged>
+<TimeCreated>64783,33329.01929</TimeCreated>
+
+<Parameter name="RuleAssistClass">
+<Default>EnsLib.MsgRouter.RuleAssist</Default>
+</Parameter>
+
+<XData name="RuleDefinition">
+<XMLNamespace>http://www.intersystems.com/rule</XMLNamespace>
+<Data><![CDATA[
+<ruleDefinition alias="" context="EnsLib.MsgRouter.RoutingEngine" production="Tongji.HL7Exchange">
+<variable name="WardCode"></variable>
+<ruleSet name="" effectiveBegin="" effectiveEnd="">
+<rule name="">
+<constraint name="msgClass" value="Tongji.ADT.MSG.InPatientInfoCRequest"></constraint>
+<when condition="&quot;LIS&quot; In Document.ADTTarget">
+<send transform="Tongji.ADT.DT.ADTC2HL7" target="NLIS-HL7TCPOperation"></send>
+</when>
+<when condition="&quot;NSDP&quot; In Document.ADTTarget">
+<send transform="Tongji.ADT.DT.ADTC2HL7" target="NSDP-HL7SoapOperation"></send>
+</when>
+<when condition="&quot;DOCARE&quot; In Document.ADTTarget">
+<send transform="Tongji.ADT.DT.ADTC2HL7" target="DOCARE-HL7SoapOperation"></send>
+</when>
+<when condition="&quot;NANGE&quot; In Document.ADTTarget">
+<send transform="Tongji.ADT.DT.ADTC2HL7" target="NANGE-HL7TCPOperation,NANGEHK-HL7TCPOperation,NANGEZF-HL7TCPOperation"></send>
+</when>
+<when condition="&quot;Nutrition&quot; In Document.ADTTarget">
+<send transform="Tongji.ADT.DT.ADTC2HL7" target="YKNutrition-HL7SopaOpreation"></send>
+</when>
+<when condition="&quot;PIVAS&quot; In Document.ADTTarget">
+<send transform="Tongji.ADT.DT.ADTC2HL7" target="PIVAS-HL7TCPOperation"></send>
+</when>
+<when condition="&quot;INFECT&quot; In Document.ADTTarget">
+<send transform="Tongji.ADT.DT.ADTC2HL7" target="INFECTN-HL7TCPOperation"></send>
+</when>
+<when condition="&quot;YKD&quot; In Document.ADTTarget">
+<send transform="Tongji.ADT.DT.ADTC2HL7" target="YKD-HL7TCPOperation"></send>
+</when>
+<when condition="&quot;BAOSHI&quot; In Document.ADTTarget">
+<send transform="Tongji.ADT.DT.ADTC2HL7" target="BAOSHI-HL7TCPOperation"></send>
+</when>
+<when condition="&quot;NLIS&quot; In Document.ADTTarget">
+<send transform="Tongji.ADT.DT.ADTC2HL7" target="NLIS-Async-HL7TCPOperation"></send>
+<return></return>
+</when>
+<when condition="(&quot;POCT&quot; In Document.ADTTarget)&amp;&amp;(Document.NursingUnit IN &quot;312953&quot;)">
+<send transform="Tongji.ADT.DT.ADTC2HL7" target="POCTNEW-HL7TCPOperation"></send>
+<return></return>
+</when>
+<when condition="&quot;XUETOU&quot; In Document.ADTTarget">
+<send transform="Tongji.ADT.DT.ADTC2HL7" target="XueTorder-HL7TCPOperation"></send>
+<return></return>
+</when>
+<when condition="(&quot;ZHIZHU&quot; In Document.ADTTarget)&amp;&amp;(Document.HospitalArea=&quot;H0001&quot;)">
+<send transform="Tongji.ADT.DT.ADTC2HL7" target="ZHIZHU-HL7TCPOperation"></send>
+<return></return>
+</when>
+<when condition="(&quot;KangFu&quot; In Document.ADTTarget)&amp;&amp;(Document.HospitalArea=&quot;H0001&quot;)">
+<send transform="Tongji.ADT.DT.ADTC2HL7" target="KangFu-HL7SoapOperation"></send>
+<return></return>
+</when>
+</rule>
+<return></return>
+</ruleSet>
+</ruleDefinition>
+]]></Data>
+</XData>
+</Class>
+</Export>
