@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Export generator="Cache" version="25" zv="Cache for Windows (x86-64) 2017.2.2 (Build 865U)" ts="2021-02-28 23:44:36">
+<Class name="Tongji.ADT.MSG.PhyApplyRequest">
+<Super>Ens.Request</Super>
+<TimeChanged>65713,65403.112694</TimeChanged>
+<TimeCreated>64783,32631.775927</TimeCreated>
+
+<UDLText name="T">
+<Content><![CDATA[
+// 患者基本信息
+
+]]></Content>
+</UDLText>
+
+<Property name="PatientId">
+<Type>%String</Type>
+</Property>
+
+<Property name="VisitId">
+<Type>%String</Type>
+</Property>
+
+<Property name="ApplyType">
+<Type>%String</Type>
+</Property>
+
+<Property name="PatientName">
+<Type>%String</Type>
+</Property>
+
+<Property name="PatientSex">
+<Type>%String</Type>
+</Property>
+
+<Property name="PatientClass">
+<Type>%String</Type>
+</Property>
+
+<Property name="DateOfBirth">
+<Type>%String</Type>
+</Property>
+
+<Property name="CardCode">
+<Type>%String</Type>
+</Property>
+
+<UDLText name="T">
+<Content><![CDATA[
+// 患者住院信息
+
+]]></Content>
+</UDLText>
+
+<UDLText name="T">
+<Content><![CDATA[/*检查申请信息*/
+]]></Content>
+</UDLText>
+
+<Property name="Clinicalitemcode">
+<Type>%String</Type>
+</Property>
+
+<Property name="Itemname">
+<Type>%String</Type>
+</Property>
+
+<Property name="Orgiddiag">
+<Type>%String</Type>
+</Property>
+
+<Property name="Orgnamediag">
+<Type>%String</Type>
+</Property>
+
+<Property name="Orgidexec">
+<Type>%String</Type>
+</Property>
+
+<Property name="Orgnameexec">
+<Type>%String</Type>
+</Property>
+
+<Property name="Applydate">
+<Type>%String</Type>
+</Property>
+
+<Property name="Orgidhospital">
+<Type>%String</Type>
+</Property>
+
+<Property name="Treatmentno">
+<Type>%String</Type>
+</Property>
+
+<Property name="Applysource">
+<Type>%String</Type>
+</Property>
+
+<UDLText name="T">
+<Content><![CDATA[/*拼音码*/
+]]></Content>
+</UDLText>
+
+<Property name="NAMEPHONETIC">
+<Type>%String</Type>
+</Property>
+
+<UDLText name="T">
+<Content><![CDATA[
+// 患者住院信息
+
+]]></Content>
+</UDLText>
+
+<UDLText name="T">
+<Content><![CDATA[/*事件类型EVN-1*/
+]]></Content>
+</UDLText>
+
+<Property name="EventType">
+<Type>%String</Type>
+</Property>
+
+<UDLText name="T">
+<Content><![CDATA[/*事件类型EVN-1*/
+]]></Content>
+</UDLText>
+
+<Property name="DeptCode">
+<Type>%String</Type>
+</Property>
+
+<UDLText name="T">
+<Content><![CDATA[/*科室编码PV1-3.1*/
+]]></Content>
+</UDLText>
+
+<Property name="DeptName">
+<Type>%String</Type>
+</Property>
+
+<UDLText name="T">
+<Content><![CDATA[/*病区编码PV1-3.2*/
+]]></Content>
+</UDLText>
+
+<Property name="WardCode">
+<Type>%String</Type>
+</Property>
+
+<UDLText name="T">
+<Content><![CDATA[/*病区名称PV1-3.10.2*/
+]]></Content>
+</UDLText>
+
+<Property name="WardName">
+<Type>%String</Type>
+</Property>
+
+<UDLText name="T">
+<Content><![CDATA[/*护理单元编码PV1-3.4.1*/
+]]></Content>
+</UDLText>
+
+<Property name="NursingUnit">
+<Type>%String</Type>
+</Property>
+
+<UDLText name="T">
+<Content><![CDATA[/*护理单元名称Pv1-3.10.3*/
+]]></Content>
+</UDLText>
+
+<Property name="NursingUnitName">
+<Type>%String</Type>
+</Property>
+
+<UDLText name="T">
+<Content><![CDATA[/*主治医生PV1-7.1*/
+]]></Content>
+</UDLText>
+
+<Property name="DoctorNo">
+<Type>%String</Type>
+</Property>
+
+<UDLText name="T">
+<Content><![CDATA[/*主治医生PV1-7.2*/
+]]></Content>
+</UDLText>
+
+<Property name="DoctorName">
+<Type>%String</Type>
+</Property>
+
+<UDLText name="T">
+<Content><![CDATA[/*新入时间PV1-44*/
+]]></Content>
+</UDLText>
+
+<Property name="InpDateTime">
+<Type>%String</Type>
+</Property>
+
+<UDLText name="T">
+<Content><![CDATA[/*出院时间PV1-45*/
+]]></Content>
+</UDLText>
+
+<Property name="DisChargeDateTime">
+<Type>%String</Type>
+</Property>
+
+<UDLText name="T">
+<Content><![CDATA[/*床号PV1-3.3*/
+]]></Content>
+</UDLText>
+
+<Property name="BedNo">
+<Type>%String</Type>
+</Property>
+
+<UDLText name="T">
+<Content><![CDATA[/*床位序号PV1-3.9*/
+]]></Content>
+</UDLText>
+
+<Property name="BedSeqNo">
+<Type>%String</Type>
+</Property>
+
+<UDLText name="T">
+<Content><![CDATA[/*院区*/
+]]></Content>
+</UDLText>
+
+<Property name="HospitalArea">
+<Type>%String</Type>
+</Property>
+
+<UDLText name="T">
+<Content><![CDATA[
+// 其他
+
+]]></Content>
+</UDLText>
+
+<Property name="DGTYPE">
+<Type>%String</Type>
+</Property>
+
+<Property name="DGName">
+<Type>%String</Type>
+<Parameter name="MAXLEN" value="1000"/>
+</Property>
+
+<Property name="ChargeTypeCode">
+<Type>%String</Type>
+</Property>
+
+<Property name="ChargeTypeName">
+<Type>%String</Type>
+</Property>
+
+<Property name="NURSINGLEVEL">
+<Type>%String</Type>
+</Property>
+
+<Property name="NURSINGLEVELName">
+<Type>%String</Type>
+</Property>
+
+<Property name="CASESTATUS">
+<Type>%String</Type>
+</Property>
+
+<Property name="CASESTATUSNAME">
+<Type>%String</Type>
+</Property>
+
+<Property name="CONTACTNAME">
+<Type>%String</Type>
+</Property>
+
+<Property name="CONTACTRELATIONSHIP">
+<Type>%String</Type>
+</Property>
+
+<Property name="CONTACTRELATIONSHIPNAME">
+<Type>%String</Type>
+</Property>
+
+<Property name="CONTACTPHONE">
+<Type>%String</Type>
+</Property>
+
+<Property name="CONTACTZIPCODE">
+<Type>%String</Type>
+</Property>
+
+<Property name="CONTACTADDRESS">
+<Type>%String</Type>
+</Property>
+
+<Property name="ADTTarget">
+<Type>%String</Type>
+</Property>
+
+<Storage name="Default">
+<Type>%Library.CacheStorage</Type>
+<DefaultData>PhyApplyRequestDefaultData</DefaultData>
+<Data name="PhyApplyRequestDefaultData">
+<Structure>listnode</Structure>
+<Subscript>"PhyApplyRequest"</Subscript>
+<Value name="1">
+<Value>PatientId</Value>
+</Value>
+<Value name="2">
+<Value>VisitId</Value>
+</Value>
+<Value name="3">
+<Value>ApplyType</Value>
+</Value>
+<Value name="4">
+<Value>PatientName</Value>
+</Value>
+<Value name="5">
+<Value>PatientSex</Value>
+</Value>
+<Value name="6">
+<Value>PatientClass</Value>
+</Value>
+<Value name="7">
+<Value>DateOfBirth</Value>
+</Value>
+<Value name="8">
+<Value>CardCode</Value>
+</Value>
+<Value name="9">
+<Value>Clinicalitemcode</Value>
+</Value>
+<Value name="10">
+<Value>Itemname</Value>
+</Value>
+<Value name="11">
+<Value>Orgiddiag</Value>
+</Value>
+<Value name="12">
+<Value>Orgnamediag</Value>
+</Value>
+<Value name="13">
+<Value>Orgidexec</Value>
+</Value>
+<Value name="14">
+<Value>Orgnameexec</Value>
+</Value>
+<Value name="15">
+<Value>Applydate</Value>
+</Value>
+<Value name="16">
+<Value>Orgidhospital</Value>
+</Value>
+<Value name="17">
+<Value>Treatmentno</Value>
+</Value>
+<Value name="18">
+<Value>Applysource</Value>
+</Value>
+<Value name="19">
+<Value>NAMEPHONETIC</Value>
+</Value>
+<Value name="20">
+<Value>EventType</Value>
+</Value>
+<Value name="21">
+<Value>DeptCode</Value>
+</Value>
+<Value name="22">
+<Value>DeptName</Value>
+</Value>
+<Value name="23">
+<Value>WardCode</Value>
+</Value>
+<Value name="24">
+<Value>WardName</Value>
+</Value>
+<Value name="25">
+<Value>NursingUnit</Value>
+</Value>
+<Value name="26">
+<Value>NursingUnitName</Value>
+</Value>
+<Value name="27">
+<Value>DoctorNo</Value>
+</Value>
+<Value name="28">
+<Value>DoctorName</Value>
+</Value>
+<Value name="29">
+<Value>InpDateTime</Value>
+</Value>
+<Value name="30">
+<Value>DisChargeDateTime</Value>
+</Value>
+<Value name="31">
+<Value>BedNo</Value>
+</Value>
+<Value name="32">
+<Value>BedSeqNo</Value>
+</Value>
+<Value name="33">
+<Value>HospitalArea</Value>
+</Value>
+<Value name="34">
+<Value>DGTYPE</Value>
+</Value>
+<Value name="35">
+<Value>DGName</Value>
+</Value>
+<Value name="36">
+<Value>ChargeTypeCode</Value>
+</Value>
+<Value name="37">
+<Value>ChargeTypeName</Value>
+</Value>
+<Value name="38">
+<Value>NURSINGLEVEL</Value>
+</Value>
+<Value name="39">
+<Value>NURSINGLEVELName</Value>
+</Value>
+<Value name="40">
+<Value>CASESTATUS</Value>
+</Value>
+<Value name="41">
+<Value>CASESTATUSNAME</Value>
+</Value>
+<Value name="42">
+<Value>CONTACTNAME</Value>
+</Value>
+<Value name="43">
+<Value>CONTACTRELATIONSHIP</Value>
+</Value>
+<Value name="44">
+<Value>CONTACTRELATIONSHIPNAME</Value>
+</Value>
+<Value name="45">
+<Value>CONTACTPHONE</Value>
+</Value>
+<Value name="46">
+<Value>CONTACTZIPCODE</Value>
+</Value>
+<Value name="47">
+<Value>CONTACTADDRESS</Value>
+</Value>
+<Value name="48">
+<Value>ADTTarget</Value>
+</Value>
+</Data>
+</Storage>
+</Class>
+</Export>
