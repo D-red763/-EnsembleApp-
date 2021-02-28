@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Export generator="Cache" version="25" zv="Cache for Windows (x86-64) 2017.2.2 (Build 865U)" ts="2021-02-28 23:44:10">
+<Class name="Tongji.ADT.BS.ScanForADT">
+<Super>Ens.BusinessService</Super>
+<TimeChanged>65769,54844.489931</TimeChanged>
+<TimeCreated>64783,32563.573135</TimeCreated>
+
+<Parameter name="ADAPTER">
+<Default>EnsLib.SQL.InboundAdapter</Default>
+</Parameter>
+
+<Property name="ADTTarget">
+<Description>
+设置目标系统，将ADT消息发送给选择的系统</Description>
+<Type>%String</Type>
+<Parameter name="DISPLAYLIST" value=",XUETOU,LIS,NLIS,NSDP,NANGE,Nutrition,DOCARE,INFECT,PIVAS,YKD,BAOSHI,POCT,ZHIZHU,KangFu"/>
+<Parameter name="MAXLEN" value="2500"/>
+</Property>
+
+<Parameter name="SETTINGS">
+<Type>%String</Type>
+<Default><![CDATA[ADTTarget:TargetSystem:selector?multiSelect=1&context={Ens.ContextSearch/getDisplayList?host=@currHostId&prop=ADTTarget}]]></Default>
+</Parameter>
+
+<UDLText name="T">
+<Content><![CDATA[
+// Parameter value As %String;
+
+]]></Content>
+</UDLText>
+
+<Method name="OnProcessInput">
+<FormalSpec>pInput:EnsLib.SQL.Snapshot,*pOutput:%RegisteredObject</FormalSpec>
+<ReturnType>%Status</ReturnType>
+<Implementation><![CDATA[
+	set obj=##class(Tongji.ADT.MSG.InPatientInfoCRequest).%New()
+	set obj.ADTTarget=..ADTTarget
+	//患者基本信息
+	set obj.PatientId = pInput.Get("PATIENT_ID")
+	set obj.PatientClass="2"
+	set obj.PatientName=pInput.Get("PATIENT_NAME")
+	set obj.PatientSex=pInput.Get("PATIENT_GENDER")
+	set obj.VisitId=pInput.Get("VISIT_ID")
+	set obj.NAMEPHONETIC=pInput.Get("NAME_PHONETIC")
+	set obj.DateOfBirth=pInput.Get("Date_Of_Birth")
+	set obj.CardCode=pInput.Get("card_code")
+	
+	//患者在院信息
+	
+	set obj.DeptCode=pInput.Get("CURRENT_DEPT")
+	set obj.DeptName=pInput.Get("CURRENT_DEPT_NAME")
+	set obj.WardCode=pInput.Get("CURRENT_WARD")
+	set obj.WardName=pInput.Get("CURRENT_WARD_NAME")
+	set obj.BedNo=pInput.Get("BED_CODE")
+	set obj.BedSeqNo=pInput.Get("SEQ_NUMBER")
+	set obj.NursingUnit=pInput.Get("CURRENT_NURSING_UNIT")
+	set obj.NursingUnitName=pInput.Get("CURRENT_NURSING_UNIT_NAME")
+	set obj.HospitalArea=pInput.Get("HOSPITAL_AREA")
+	set obj.DoctorNo=pInput.Get("DOCTOR_ATTENDING")
+	set obj.DoctorName=pInput.Get("DOCTOR_ATTENDING_NAME")
+	set obj.InpDateTime=pInput.Get("NEW_IN_DEPT_DATE")
+	
+	//其他诊断/费用/联系人信息
+	//set obj.DGCode=pInput.Get("CLINIC_DIAGNOSIS")
+	set obj.EventType=pInput.Get("EventType")
+	set obj.DGName=pInput.Get("DIAG")
+	set obj.DGTYPE="3"	
+	set obj.ChargeTypeCode=pInput.Get("COST_TYPE")
+	set obj.ChargeTypeName=pInput.Get("COST_TYPE_NAME")
+	set obj.NURSINGLEVEL=pInput.Get("NURSING_LEVEL")
+	set obj.NURSINGLEVELName=pInput.Get("NURSING_LEVEL_NAME")
+	set obj.CASESTATUS=pInput.Get("CASE_STATUS")
+	set obj.CASESTATUSNAME=pInput.Get("CASE_STATUS_NAME")
+	set obj.CONTACTADDRESS=pInput.Get("contact_address")
+	set obj.CONTACTNAME=pInput.Get("contact_name")
+	set obj.CONTACTPHONE=pInput.Get("contact_phone")
+	set obj.CONTACTRELATIONSHIP=pInput.Get("contact_relationship")
+	set obj.CONTACTRELATIONSHIPNAME=pInput.Get("contact_relationship_name")
+	set obj.CONTACTZIPCODE=pInput.Get("contact_zipcode")
+	set obj.DisChargeDateTime=pInput.Get("discharge_dept_date")
+	
+	do obj.%Save()
+	set tSC= ..SendRequestAsync("ADT.ScanADT",obj)
+	Quit tSC
+]]></Implementation>
+</Method>
+</Class>
+</Export>
